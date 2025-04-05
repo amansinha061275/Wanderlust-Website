@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3>Edit your Listing</h3>
+    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="row g-3 needs-validation">
+
+      <div class="mb-3">
+        <lable for="title" class="form-lable">Title</lable>
+        <input name="listing[title]" value="<%= listing.title%>" type="text" class="form-control" required/>
+        <div class="valid-feedback"> Title looks good</div>
+      </div>
+     
+      <div class="mb-3">
+        <lable for="description" class="form-lable">Description</lable>
+        <textarea name="listing[description]"   class="form-control" required><%= listing.description%></textarea>
+        <div class="invalid-feedback"> please enter short description</div>
+      </div>
+      
+      
+      <div class="mb-3">
+        <lable for="image" class="form-lable">image Link</lable>
+        <input name="listing[image]"  value="<%= listing.image%>" type="text" class="form-control" required/>
+      </div>
+      
+      
+      <div class="mb-3">
+        <lable for="price" class="form-lable">price</lable>
+        <input name="listing[price]"  value="<%= listing.price%>" type="number" class="form-control" required/>
+        <div class="invalid-feedback"> please enter valid price</div>
+      </div>
+      
+      
+      
+      <div class="mb-3">
+        <lable for="country" class="form-lable">country</lable>
+        <input name="listing[country]"  value="<%= listing.country%>" type="text" class="form-control" required/>
+        <div class="invalid-feedback"> please enter valid country name</div>
+        <br/>
+      </div>
+      
+      
+      <div class="mb-3">
+        <lable for="location" class="form-lable">location</lable> 
+        <input name="listing[location]"  value="<%= listing.location%>" type="text" class="form-control" required/>
+        <div class="invalid-feedback"> please enter valid location name</div>
+      </div>
+      
+      <br/>
+      <button class="btn btn-dark ">Edit</button>
+    </form>
+</body>
