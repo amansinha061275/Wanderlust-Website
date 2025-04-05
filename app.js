@@ -44,7 +44,8 @@ app.use(express.static(path.join(__dirname,"/public")));
 
 app.get("/",(req,res) =>{
   // console.dir(req.cookies);
-    res.send("hi i am root");
+   // res.send("hi i am root");
+    res.render("listings/index.ejs");
  });
  
  const store =MongoStore.create({
